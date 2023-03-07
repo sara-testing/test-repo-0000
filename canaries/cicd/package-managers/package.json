@@ -1,0 +1,25 @@
+{
+    "name": "something-else-v2",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-jss": "^10.9.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --coverage ."
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.16.2",
+        "@testing-library/react": "^12.1.4",
+        "@testing-library/react-hooks": "^8.0.0",
+        "@testing-library/user-event": "^13.5.0",
+        "@types/jest": "^27.4.1",
+        "@types/luxon": "^2.3.1",
+        "@types/node": "^16.11.26",
+        "@types/react": "^17.0.40"
+    }
+}

@@ -1,0 +1,7 @@
+[[rules]]
+description = "Custom Application Key"
+id = "boost-application-token"
+regex = '''boost_ak[a-f0-9]{43,64}\b'''
+keywords = [
+    "boost_",
+]

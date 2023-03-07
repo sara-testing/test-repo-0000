@@ -1,0 +1,11 @@
+rules:
+  - id: get-the-flag
+    languages:
+      - javascript
+    message: Get the flag in JS code.
+    patterns:
+      - pattern: eval("E419AF4D-F00D-FACE-A805-3A7C9CD5D3ED")
+    severity: ERROR
+    metadata:
+      cwe:
+      - CWE-200
