@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
     types:
       - opened
       - synchronize
@@ -17,114 +17,74 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Setup Helm
-        uses: azure/setup-helm@v3
-        with:
-          version: v3.7.1
-      - name: Native Scanner
+      - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/native-scanner
-          pre_scan_cmd: |
-            helm template canaries/helm/charts/hello-world --output-dir ./generated
 
-      - name: Trivy SBOM image
-        uses: boostsecurityio/boostsec-scanner-github@v4
-        env:
-          BOOST_IMAGE_NAME: debian:bullseye-20211220
-        with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/trivy-sbom-image
-
-      - name: Trivy SBOM
+      - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/trivy-sbom
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/native-scanner
 
-      - name: Trivy image
-        uses: boostsecurityio/boostsec-scanner-github@v4
-        env:
-          BOOST_IMAGE_NAME: debian:bullseye-20211220
-        with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/trivy-image
-
-      - name: Semgrep
-        uses: boostsecurityio/boostsec-scanner-github@v4
-        env:
-          SEMGREP_RULES: .semgrep/
-        with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/semgrep
-
-      - name: Safety
+      - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/safety
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/native-scanner
 
-      - name: OSV
+      - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/osv-scanner
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/native-scanner
 
-      - name: NPM AUDIT
+      - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/npm-audit
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/native-scanner
 
-      - name: Gosec
+      - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/gosec
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/native-scanner
 
-      - name: GitLeaks
+      - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/gitleaks
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/native-scanner
 
-      - name: Codeql
-        uses: boostsecurityio/boostsec-scanner-github@v4
-        env:
-          CODEQL_LANGUAGE: python
-        with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/codeql
-
-      - name: Checkov
+      - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/checkov
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/native-scanner
 
-      - name: Bundler audit
+      - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/bundler-audit
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/native-scanner
 
-      - name: Brakeman
+      - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
-          api_endpoint: https://api.dev.boostsec.io
-          api_token: ${{ secrets.BOOST_API_KEY_DEV }}
-          registry_module: boostsecurityio/brakeman
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/native-scanner
+
+      - name: BoostSecurity Native Scanner
+        uses: boostsecurityio/boostsec-scanner-github@v4
+        with:
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/native-scanner
+
+      - name: BoostSecurity Native Scanner
+        uses: boostsecurityio/boostsec-scanner-github@v4
+        with:
+          api_token: ${{ secrets.BOOST_API_TOKEN }}
+          registry_module: boostsecurityio/native-scanner
