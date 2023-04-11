@@ -17,11 +17,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: BoostSecurity Brakeman
+      - name: BoostSecurity Checkov
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
-          registry_module: boostsecurityio/brakeman
+          registry_module: boostsecurityio/checkov
 
       - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
@@ -29,8 +29,8 @@ jobs:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/native-scanner
 
-      - name: BoostSecurity Safety
+      - name: BoostSecurity semgrep
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
-          registry_module: boostsecurityio/safety
+          registry_module: boostsecurityio/semgrep
