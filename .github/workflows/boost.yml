@@ -66,7 +66,8 @@ jobs:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/snyk-test
           api_endpoint: https://api.dev.boostsec.io
-          snyk_token: ${{ secrets.SNYK_TOKEN }}
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: BoostSecurity Trivy (FS SBOM)
         uses: boostsecurityio/boostsec-scanner-github@v4
