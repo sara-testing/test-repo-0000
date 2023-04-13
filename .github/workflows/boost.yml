@@ -22,18 +22,21 @@ jobs:
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/brakeman
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity Checkov
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/checkov
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity Gitleaks
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/gitleaks
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity Gitleaks Git Scan
         uses: boostsecurityio/boostsec-scanner-github@v4
@@ -41,18 +44,21 @@ jobs:
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/gitleaks-full
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity Native Scanner
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/native-scanner
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity Safety
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/safety
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity Trivy (FS SBOM)
         uses: boostsecurityio/boostsec-scanner-github@v4
@@ -60,39 +66,46 @@ jobs:
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/trivy-sbom
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity bundler-audit
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/bundler-audit
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity gosec
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/gosec
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity nancy
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/nancy
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity npm-audit
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/npm-audit
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity osv-scanners
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/osv-scanner
+          api_endpoint: https://api.dev.boostsec.io
 
       - name: BoostSecurity semgrep
         uses: boostsecurityio/boostsec-scanner-github@v4
         with:
           api_token: ${{ secrets.BOOST_API_TOKEN }}
           registry_module: boostsecurityio/semgrep
+          api_endpoint: https://api.dev.boostsec.io
