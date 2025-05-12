@@ -2,7 +2,7 @@
 source "https://rubygems.org"
 
 #don't upgrade
-gem "rails", "6.0.0"
+gem "rails", "7.0.0"
 
 ruby "2.6.5"
 
@@ -41,7 +41,7 @@ group :development, :mysql do
   gem "guard-rspec"
   gem "guard-shell"
   gem "pry"
-  gem "rack-livereload"
+  gem "rack-livereload", ">= 0.6.0"
   gem "rb-fsevent"
   gem "rubocop-github"
   gem "travis-lint"
