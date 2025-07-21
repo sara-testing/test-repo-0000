@@ -2,24 +2,24 @@
 source "https://rubygems.org"
 
 #don't upgrade
-gem "rails", "6.0.0"
+gem "rails", "6.0.1"
 
 ruby "2.6.5"
 
-gem "aruba"
+gem "aruba", ">= 0.14.13"
 gem "bcrypt"
 gem "coffee-rails"
 gem "execjs"
 gem "foreman"
 gem "jquery-fileupload-rails"
-gem "jquery-rails"
+gem "jquery-rails", ">= 4.4.0"
 gem "minitest"
 gem "powder" # Pow related gem
 gem "pry-rails" # not in dev group in case running via prod/staging @ a training
 gem "puma"
 gem "rails-perftest"
 gem "rake"
-gem "responders" #For Rails 4.2 # LOCKED DOWN
+gem "responders" , ">= 3.0.1" #For Rails 4.2 # LOCKED DOWN
 gem "ruby-prof"
 gem "sassc-rails"
 gem "simplecov", require: false, group: :test
@@ -36,10 +36,10 @@ gem "unicorn"
 group :development, :mysql do
   gem "better_errors"
   gem "binding_of_caller"
-  gem "bundler-audit"
+  gem "bundler-audit", ">= 0.7.0"
   gem "guard-livereload"
   gem "guard-rspec"
-  gem "guard-shell"
+  gem "guard-shell", ">= 0.7.2"
   gem "pry"
   gem "rack-livereload"
   gem "rb-fsevent"
@@ -52,7 +52,7 @@ group :development, :test, :mysql do
   gem "database_cleaner"
   gem "launchy"
   gem "poltergeist"
-  gem "rspec-rails", '4.0.0.beta3' # 4/26/2019: LOCKED DOWN
+  gem "rspec-rails", "4.0.0" # 4/26/2019: LOCKED DOWN
   gem "test-unit"
 end
 
