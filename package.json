@@ -5,7 +5,7 @@
     "dependencies": {
         "@auth0/auth0-react": "^1.9.0",
         "@heroicons/react": "^2.0.10",
-        "@popperjs/core": "^2.11.4",
+        "@popperjs/core": "^2.11.8",
         "@tippyjs/react": "^4.2.6",
         "@types/react-highlight-words": "^0.16.4",
         "@types/wicg-file-system-access": "^2020.9.5",
