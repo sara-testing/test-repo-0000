@@ -4,7 +4,7 @@
     "private": true,
     "dependencies": {
         "@auth0/auth0-react": "^1.9.0",
-        "@heroicons/react": "^2.0.10",
+        "@heroicons/react": "^2.0.18",
         "@popperjs/core": "^2.11.4",
         "@tippyjs/react": "^4.2.6",
         "@types/react-highlight-words": "^0.16.4",
